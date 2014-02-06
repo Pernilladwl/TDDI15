@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="303538b9-de99-ca4d-85a7-fb3a646c4173" kpf_version="5" name="lab1.komodoproject">
+<file id="5da5bd80-f044-6045-a1f2-b9eee36439fb" idref="303538b9-de99-ca4d-85a7-fb3a646c4173" name="wimage.png" url="wimage.png">
+</file>
+<file id="692b58f4-2218-a849-83df-7da24df478ce" idref="303538b9-de99-ca4d-85a7-fb3a646c4173" name="client.css" url="client.css">
+</file>
+<file id="7f35d472-ff23-bf47-9350-3a1227aac917" idref="303538b9-de99-ca4d-85a7-fb3a646c4173" name="client.js" url="client.js">
+</file>
+<file id="c5d69b27-bc8a-3442-b95e-4c4d3853a1e7" idref="303538b9-de99-ca4d-85a7-fb3a646c4173" name="client.html" url="client.html">
+</file>
+<file id="dcf0de10-64e0-0349-8435-4960a52f93fb" idref="303538b9-de99-ca4d-85a7-fb3a646c4173" name="serverstub.js" url="serverstub.js">
+</file>
+</project>

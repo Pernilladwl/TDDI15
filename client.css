@@ -1,0 +1,161 @@
+body {
+    background-color: #E9E9E9;
+   /* background-color: #AAFFAA */
+}
+
+form {
+    background-color: #FFFFFF;
+    border:1px solid #000000;
+    width: 250px;
+    float: right;
+}
+    
+img {
+    float: left;
+    width: 340px;
+    height: 400px;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+}
+
+div#picture_and_forms {
+    width: 600px;
+    margin:0 auto; 
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+    
+div#signup {
+    float:right;
+    overflow: scroll;
+}
+
+div#login_email {
+    margin-top: 10px;
+}
+div#login {
+    float: right;
+    height: 104px;
+}
+
+
+div#picture {
+    float: left;
+}
+
+p#login_fail, p#signup_fail {
+    width: 70%;
+    word-break: normal;
+    color: #FF0000;
+    float: left;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+    
+p#signup_text {
+   text-align: center;
+   font-weight: bold;
+   margin-top: 7px;
+   margin-bottom: 13px;
+   font-size: large;
+}
+
+button {
+    width: 20%;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    display: inline-block;
+}
+
+ul#tabbitab li{
+    float: left;
+    display: block;
+    width: auto;
+    display: inline;
+    
+}
+
+ul#tabbitab li a{
+    border: 1px solid #000000;
+    display: block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: #FFFFFF;
+}
+
+ul#tabbitab {
+    list-style: none;
+    float: left;
+    margin-left: -40px;
+}
+
+a#a-tab1, a#a-tab2, a#a-tab3 {
+    color: #000000;
+    text-align: center;
+}
+
+div .tab-content-home {
+    display: block;
+    border: 1px solid #000000;
+}
+
+div .tab-content-browse {
+    display: none;
+    border: 1px solid #000000;
+}
+
+div .tab-content-account {
+    display: none;
+    border: 1px solid #000000;
+}
+/*
+ #Pernilla€rDum
+div#tab-content1, div#tab-content2, div#tab-content3 {
+    background-color: #FFFFFF;
+    width: 100px;
+    height: 100px;
+}
+div#tabs {
+    background-color: #FFFFFF;
+    width: auto;
+    border: 1px solid #000000;
+    
+}
+
+		
+input#username_id, input#password_id, input#username_signup_id,
+input#password_signup_id, input#password_repeat_id, input#firstname_id,
+input#lastname_id, input#city_id, input#country_id, {*/
+input {
+    float: right;
+    display: inline-block;
+    height: 20px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+
+
+select {
+    float: right;
+    width: 148px;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+  
+
+label {
+    float: left;
+    display: inline-block;
+    height: 22px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}

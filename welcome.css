@@ -1,0 +1,70 @@
+body {
+    background-color: #E9E9E9;}
+
+form {
+    background-color: #FFFFFF;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    width: 250px;
+    float: right;
+    clear: right;
+    }
+    
+img {
+    float: left;
+    width: 340px;
+    height: 400px;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;}
+
+div {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 100px;
+    }
+    
+button {
+    float: right;
+    clear: right;}
+
+/*		
+input{
+float: right;
+
+}
+
+
+/*
+
+label, input, select {
+    input.float: right;
+    label.float: left;
+    display: inline;
+    width: auto;
+    }
+*/
+
+select {
+    float: right;
+	}
+  
+/*  label {
+    float: left;
+    clear: left;
+	display: inline-block;}*/
+
+#signupform {
+    }
+#signup{
+vertical-align: bottom;
+}
+	/*
+#searchform {
+	vertical_
+    bottom: 0;
+    color: red;}
+
+*/

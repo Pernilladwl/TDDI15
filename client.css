@@ -72,6 +72,13 @@ button {
     display: inline-block;
 }
 
+
+ul#tabbitab {
+    list-style: none;
+    float: left;
+    margin-left: -40px;
+}
+
 ul#tabbitab li{
     float: left;
     display: block;
@@ -87,36 +94,50 @@ ul#tabbitab li a{
     margin-bottom: 10px;
     width: 100px;
     height: 40px;
-    background-color: #FFFFFF;
+	color: #000000;
+    text-align: center;
+	border-bottom: none;
+	}
+	
+ul#tabbitab a.tabs{
+	background-color: #FFFFCC;
+	color: #000000;
 }
 
-ul#tabbitab {
-    list-style: none;
-    float: left;
-    margin-left: -40px;
-}
 
-a#a-tab1, a#a-tab2, a#a-tab3 {
+ul#tabbitab a.selected {
     color: #000000;
     text-align: center;
+	background-color: #FFFFFF;
+	padding: 1px;
 }
 
-div .tab-content-home {
-    display: block;
+div.tab-content{
     border: 1px solid #000000;
-}
+	margin:0px;
+	margin-top: 38px;
+	width: 1200px;
+	height: 550px;
+	background-color: #FFFFFF;
 
-div .tab-content-browse {
+}S
+div#tab-content-home{
+	display: block;
+	background-color: FFFFCC;
+	}
+	
+	
+div#tab-content-browse {
     display: none;
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
 }
 
-div .tab-content-account {
+div#tab-content-account {
     display: none;
-    border: 1px solid #000000;
+/*    border: 1px solid #000000;*/
 }
-/*
- #Pernilla€rDum
+
+ 
 div#tab-content1, div#tab-content2, div#tab-content3 {
     background-color: #FFFFFF;
     width: 100px;

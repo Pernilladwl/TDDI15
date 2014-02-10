@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--file:///Users/timliden/Dropbox/tddi15/lab1/client.html-->
 <html lang="en">
 
@@ -49,15 +49,17 @@
     </script>
     
     <script type="text/view" id="profileview">
-        <ul id="tabbitab">
+        
+		<ul id="tabbitab">
             <li>
-                <a href="#tab-content1" id="a-tab1" class="selected">Home</a>
+                <a href="javascript:void(0)" id="a-tab1" class="selected" onClick="showContent_tab1(); return false;">Home</a>
             </li>
-            <li>
-                <a href="#tab-content2" id="a-tab2" class="tabs">Browse</a>
+			<li>
+				<a href="javascript:void(0)"  onclick="showContent_tab2(); return false;" id="a-tab2" class="tabs">Browse</a>
+                <!--<a href="#tab-content2" id="a-tab2" class="tabs" onClick="showContent_tab2()">Browse</a>!-->
             </li>
             <li>                
-                <a href="#tab-content3" id="a-tab3" class="tabs">Account</a>
+                <a href="javascript:void(0)" id="a-tab3" class="tabs" onClick="showContent_tab3(); return false;">Account</a>
             </li>
         </ul>
         <br>

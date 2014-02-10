@@ -200,3 +200,43 @@ if (error_flag == 1) {
 }
 return false;
 };
+
+
+// SIGNED IN JS.s 
+
+//SHOW TAB CONTENT FUNCTION
+var selected = "a-tab1"; 
+var selected_content = "tab-content-home";
+
+function show_Content_tab1() {
+showContent("a-tab1", "tab-content-home");
+return false; 
+}
+
+function show_Content_tab2() {
+showContent("a-tab2", "tab-content-browse");
+return false;
+}
+
+function show_Content_tab3() {
+showContent("a-tab3", "tab-content-account");
+}
+
+
+
+
+function showContent(tab_number, content){
+/*   document.getElementById(selected_content).style.background-color="#FFFCC"; */
+   document.getElementById(selected_content).style.display="none";
+   document.getElementById(selected).className="tabs"
+   
+/*   document.getElementById(content).style.background-color="#FFFFF";*/
+   document.getElementById(content).style.display="block";
+   document.getElementById(tab_number).className="selected" 
+   
+   selected = "tab_number"; 
+   selected_content = "content";
+    
+   return false;
+}
+

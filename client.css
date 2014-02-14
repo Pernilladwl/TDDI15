@@ -5,7 +5,7 @@ body {
 
 form {
     background-color: #FFFFFF;
-    border:1px solid #000000;
+    border: 1px solid #000000;
     width: 250px;
     float: right;
 }
@@ -21,14 +21,13 @@ img {
 
 div#picture_and_forms {
     width: 600px;
-    margin:0 auto; 
+    margin: 0 auto; 
     margin-top: 100px;
     margin-bottom: 200px;
 }
     
 div#signup {
     float:right;
-    overflow: scroll;
 }
 
 div#login_email {
@@ -84,7 +83,6 @@ ul#tabbitab li{
     display: block;
     width: auto;
     display: inline;
-    
 }
 
 ul#tabbitab li a{
@@ -94,39 +92,40 @@ ul#tabbitab li a{
     margin-bottom: 10px;
     width: 100px;
     height: 40px;
-	color: #000000;
+    color: #000000;
     text-align: center;
-	border-bottom: none;
-	}
-	
+    border-bottom: none;
+    }
+
 ul#tabbitab a.tabs{
-	background-color: #FFFFCC;
-	color: #000000;
+    background-color: #C0C0C0;
+    color: #000000;
 }
 
 
 ul#tabbitab a.selected {
     color: #000000;
     text-align: center;
-	background-color: #FFFFFF;
-	padding: 1px;
+    background-color: #FFFFFF;
+    padding: 0px; /*TMLDN VILL HA DEN TILL 0*/
+    border-bottom-color: #000000;
 }
 
 div.tab-content{
     border: 1px solid #000000;
-	margin:0px;
-	margin-top: 38px;
-	width: 1200px;
-	height: 550px;
-	background-color: #FFFFFF;
-
+    /*margin: 0px;*/
+    margin-top: 38px;
+    width: 1200px;
+    height: 550px;
+    background-color: #FFFFFF;
+    text-align: left;
 }
+
 div#tab-content-home{
-	display: block;
+    display: block;
 /*	background-color: FFFFCC;*/
-	}
-	
-	
+}
+
 div#tab-content-browse {
     display: none;
     /*border: 1px solid #000000;*/
@@ -143,15 +142,15 @@ div#tab-content1, div#tab-content2, div#tab-content3 {
     width: 100px;
     height: 100px;
 }
+
 div#tabs {
     background-color: #FFFFFF;
     width: auto;
     border: 1px solid #000000;
-    
 }
 
-		
-input#username_id, input#password_id, input#username_signup_id,
+
+/*input#username_id, input#password_id, input#username_signup_id,
 input#password_signup_id, input#password_repeat_id, input#firstname_id,
 input#lastname_id, input#city_id, input#country_id, {*/
 input {

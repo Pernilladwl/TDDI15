@@ -82,7 +82,7 @@
                </ul>
            <br>
                <div class="tab-content" id="tab-content-home">  
-			   <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
+					<div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
 					<h1>Home Tab</h1>
                     <p class="p_logout" id="p_logout-home"></p></div>
                     
@@ -93,19 +93,18 @@
 					<label class="user_info">City:</label> <label id ="home_city"> </label><br>
 					<label class="user_info">Country:</label> <label id ="home_country"> </label><br> </p>
 					
-					<form name= "form_wall_m" onsubmit="return post_own_message(); ">
-					<label> Write your message</label> <br> 
+					<form name= "form_wall_m" action="#" onsubmit="return post_own_message(); ">
+					<label> Write your message:</label> <br> 
 					<textarea rows="4" cols="60" id="wall_message"></textarea> <br>
 					<input type="submit" id="submit_message"> <br>
 					<div style="clear: both;"></div>   
 					</form>
-					<div> Wall
-					</div>
+				<div> Wall</div>
 
                </div>
 
                <div class="tab-content" id="tab-content-browse">
-                   <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
+                    <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
                     <h1>Browsing Tab</h1>
                     <p class="p_logout" id="p_logout-browse"></p></div>
 
@@ -120,7 +119,7 @@
                </div>
                
                <div class="tab-content" id="tab-content-account">
-					 <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
+					<div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
                     <h1>Account Tab</h1>
                     <p class="p_logout" id="p_logout-account"></p></div>
 

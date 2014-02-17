@@ -51,6 +51,11 @@ clearAllForms = function() {
     document.getElementById("country_id").value=""; 
 }
 
+clear_wall_form = function() {
+ 		document.getElementById("wall_message").value="";
+
+}
+
 clear_AccountForms = function() {
 	if(document.getElementById("psw_fail").innerHTML =="Password changed.") {
 		document.getElementById("psw_old").value="";
@@ -318,7 +323,7 @@ function showContent(tab_number, content){
    
    selected = tab_number; 
    selected_content = content;
-    
+  
    return false;
 }
 
@@ -336,10 +341,19 @@ function get_own_info(){
 }
 
 function post_own_message(){
-var mail = serverstub.tokenToEmail(sessionStoreage.token);
-document.getElementById("myTextarea").select();
-serverstub.postMessage(sessionStorage.token, document.getElementById("wall_message").select(), mail);
+	var mail = serverstub.tokenToEmail(sessionStorage.token);
+//	document.getElementById("wall_message").select();
+	var send = serverstub.postMessage(sessionStorage.token, document.getElementById("wall_message").select(), mail);
+	if(send.success){
+		clear_wall_form();
+	}
 return false;
+}
+
+function load_messeges(){
+
+var message = serverstub.getUserMessagesByToken(sessionStore.token);
+
 }
 
 logOut = function() {
@@ -373,7 +387,3 @@ logOut = function() {
 		}
 	}
 }
-/*function load_messeges(){
-
-var serverstub.getUserMessagesByToken;
-}*/

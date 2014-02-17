@@ -3,7 +3,33 @@ body {
    /* background-color: #AAFFAA */
 }
 
-form {
+/****** Here is the css for welcomeview  ******/
+div#picture_and_forms {
+    width: 600px;
+    margin: 0 auto; 
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+    
+div#signup {
+    float:right;
+}
+
+div#login_email {
+    margin-top: 10px;
+}
+
+div#login {
+    float: right;
+    height: 104px;
+}
+
+
+div#picture {
+    float: left;
+}
+
+form.form_home {
     background-color: #FFFFFF;
     border: 1px solid #000000;
     width: 250px;
@@ -19,41 +45,23 @@ img {
     border-width: 1px;
 }
 
-div#picture_and_forms {
-    width: 600px;
-    margin: 0 auto; 
-    margin-top: 100px;
-    margin-bottom: 200px;
-}
-    
-div#signup {
-    float:right;
-}
-
-div#login_email {
-    margin-top: 10px;
-}
-div#login {
+p.p_logout {
     float: right;
-    height: 104px;
+    margin-top: -20px;
+    margin-right: 10px;
 }
 
-
-div#picture {
-    float: left;
-}
-
-p#login_fail, p#signup_fail {
+p#login_fail, p#signup_fail, p#psw_fail, p#browse_fail{
     width: 70%;
-    word-break: normal;
     color: #FF0000;
+    word-break: normal;
     float: left;
     display: inline-block;
     margin-bottom: 5px;
     margin-top: 2px;
     margin-left: 5px;
 }
-    
+   
 p#signup_text {
    text-align: center;
    font-weight: bold;
@@ -62,7 +70,7 @@ p#signup_text {
    font-size: large;
 }
 
-button {
+button.button_home {
     width: 20%;
     float: right;
     margin-right: 5px;
@@ -71,96 +79,13 @@ button {
     display: inline-block;
 }
 
-
-ul#tabbitab {
-    list-style: none;
-    float: left;
-    margin-left: -40px;
-}
-
-ul#tabbitab li{
-    float: left;
-    display: block;
-    width: auto;
-    display: inline;
-}
-
-ul#tabbitab li a{
-    border: 1px solid #000000;
-    display: block;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: 100px;
-    height: 40px;
-    color: #000000;
-    text-align: center;
-    border-bottom: none;
-    }
-
-ul#tabbitab a.tabs{
-    background-color: #C0C0C0;
-    color: #000000;
-}
-
-
-ul#tabbitab a.selected {
-    color: #000000;
-    text-align: center;
-    background-color: #FFFFFF;
-    padding: 0px; /*TMLDN VILL HA DEN TILL 0*/
-    border-bottom-color: #000000;
-}
-
-div.tab-content{
-    border: 1px solid #000000;
-    /*margin: 0px;*/
-    margin-top: 38px;
-    width: 1200px;
-    height: 550px;
-    background-color: #FFFFFF;
-    text-align: left;
-}
-
-div#tab-content-home{
-    display: block;
-/*	background-color: FFFFCC;*/
-}
-
-div#tab-content-browse {
-    display: none;
-    /*border: 1px solid #000000;*/
-}
-
-div#tab-content-account {
-    display: none;
-/*    border: 1px solid #000000;*/
-}
-
- 
-div#tab-content1, div#tab-content2, div#tab-content3 {
-    background-color: #FFFFFF;
-    width: 100px;
-    height: 100px;
-}
-
-div#tabs {
-    background-color: #FFFFFF;
-    width: auto;
-    border: 1px solid #000000;
-}
-
-
-/*input#username_id, input#password_id, input#username_signup_id,
-input#password_signup_id, input#password_repeat_id, input#firstname_id,
-input#lastname_id, input#city_id, input#country_id, {*/
-input {
+input.input_home {
     float: right;
     display: inline-block;
     height: 20px;
     margin-bottom: 2px;
     margin-right: 5px;
 }
-
 
 select {
     float: right;
@@ -171,11 +96,151 @@ select {
 }
   
 
-label {
+label.label_home {
     float: left;
     display: inline-block;
     height: 22px;
     margin-top: 4px;
     margin-bottom: 2px;
     margin-left: 5px;
+}
+
+
+/***********Here are the css for the profileview********/
+div#profile{
+    width: 600px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul#tabbitab {
+    padding: 0px;
+    list-style: none;
+}
+
+ul#tabbitab li{
+    display: block;
+    width: 100px;
+    display: inline;
+    float: left;
+    margin-top: 70px;
+}
+
+ul#tabbitab li a{
+    border: 1px solid #000000;
+    display: block;
+    width: 100px;
+    height: 40px;
+    color: #000000;
+    text-align: center;
+    clear: right;
+    }
+
+ul#tabbitab a.tabs{
+    background-color: #C0C0C0;
+    color: #000000;
+    height: 32px;
+}
+
+
+ul#tabbitab a.selected {
+    color: #000000;
+    height: 32px;
+    background-color: #FFFFFF;
+    border-bottom-width: 1px;
+    border-bottom-color: #000000;
+/*    border-bottom: none;*/
+}
+
+div.tab-content{
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 85px;
+}
+
+div#tab-content-home{
+    display: block;
+}
+
+div#tab-content-browse {
+    display: none;
+}
+
+div#tab-content-account {
+    display: none;
+}
+
+ 
+div#tab-content1, div#tab-content2, div#tab-content3 {
+    background-color: #FFFFFF;
+    width: 100px;
+    height: 100px;
+    text-align: left;
+}
+
+textarea#wall_message{
+	margin-left: 1%;	
+	width: 80%;	
+	height: 20%;
+}
+input#submit_message{
+float: left;
+margin-left: 1%;
+clear: right;
+}
+
+label.user_info {
+	font-weight: bold;
+	margin-left: 1%;
+	}
+
+label.label_profile {
+    float: left;
+    margin-left: 5px;
+    width: 100px;
+}
+
+input.input_profile {
+    float: left;
+    clear: right;
+}
+
+p#change_pw, p#browse_user  {
+    float: left;
+    margin-left: 5px;
+    clear: right;
+}
+
+h1 {
+    text-align: center;
+	clear: left;
+}
+
+button.button_logout {
+    height: 28px;
+    float: right;
+    margin-top: 5px;
+    width: 20%;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+button.button_profile {
+    width: 20%;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    display: inline-block;
+}
+
+form.form_profile {
+    width: 260px;
+    float: left;
 }

@@ -12,72 +12,139 @@
      <div id="picture_and_forms">
           <div id="picture"><img src="wimage.png" alt="SuperCoolPicture"></div>
                <div id="login">   <!--onsubmit="store(this);return false -->
-               <form name="sign_in_form" action="#" onsubmit="return loginValidateForm();" id="loginform">
+               <form class="form_home" name="sign_in_form" action="#" onsubmit="return loginValidateForm();" id="loginform">
                     <div id="login_email">
-                    <label>Email:</label>       <input type="email" name="username" id="username_id" placeholder="Email@domain.com" onfocus="ClearLoginText()"></div>
-                    <label>Password:</label>    <input type="password" name="password" id="password_id" placeholder="Password">
+                    <label class="label_home">Email:</label>       
+                    <input type="email" name="username" id="username_id" class="input_home" placeholder="Email@domain.com" onfocus="ClearLoginText()"></div>
+                   
+                    <label class="label_home">Password:</label>    
+                    <input type="password" name="password" id="password_id" class="input_home" placeholder="Password">
                          <div style="clear: both;"></div>
                     <div><p id="login_fail"></p> <!--Wrong username or password -->
-                    <button type="submit" id="submit_id1">login</button></div>
+                    <button class="button_home" type="submit" id="submit_id1">login</button></div>
                </form>
           </div>
            
           <div id="signup">
-               <form name="sign_up_form" action="#" onsubmit="return signupValidateForm();" id="signupform">
+               <form class="form_home" name="sign_up_form" action="#" onsubmit="return signupValidateForm();" id="signupform">
                     <p id="signup_text">Sign up here</p>
-                    <label>Email:</label>       <input type="email" name="username_signup" id="username_signup_id" placeholder="Email@domain.com" onfocus="ClearSignUpText()">
+                    <label class="label_home">Email:</label>       
+                    <input type="email" name="username_signup" id="username_signup_id" class="input_home" placeholder="Email@domain.com" onfocus="ClearSignUpText()">
                     <br>
-                    <label>Password:</label>    <input type="password" name="password_signup" id="password_signup_id" placeholder="Password"><br>
-                    <label>Repeat PSW:</label>  <input type="password" name="password_repeat" id="password_repeat_id" placeholder="Password"><br>
-                    <label>Firstname:</label>   <input type="text" name="firstname" id="firstname_id" placeholder="Name"><br>
-                    <label>Familyname:</label>  <input type="text" name="lastname" id="lastname_id" placeholder="Surname"><br>
-                    <label>Gender:</label>
+                    <label class="label_home">Password:</label>    
+                    <input type="password" name="password_signup" id="password_signup_id" class="input_home" placeholder="Password"><br>
+                    
+                    <label class="label_home">Repeat PSW:</label>  
+                    <input type="password" name="password_repeat" id="password_repeat_id" class="input_home" placeholder="Password"><br>
+                    
+                    <label class="label_home">Firstname:</label>   
+                    <input type="text" name="firstname" id="firstname_id" class="input_home" placeholder="Name"><br>
+                    
+                    <label class="label_home">Familyname:</label>  
+                    <input type="text" name="lastname" id="lastname_id" class="input_home" placeholder="Surname"><br>
+                    
+                    <label class="label_home">Gender:</label>
                          <select name="gender" id="gender_id">
                              <option value="male">Male</option> 
-                             <option value="female">Female</option>
-                             <option value="horse">Horse</option>
-                             <option value="midget">Midget</option></select><br>
+                             <option value="female">Female</option></select><br>
                          <div style="clear: both;"></div>     
-                    <label>City:</label>        <input type="text" name="city" id="city_id" placeholder="City"><br>
-                         <div style="clear: both;"></div>     
-                    <label>Country:</label>     <input type="text" name="country" id="country_id" placeholder="Country"><br>
+                    
+                    <label class="label_home">City:</label>        
+                    <input type="text" name="city" id="city_id" class="input_home" placeholder="City"><br>
+                         <div style="clear: both;"></div>   
+
+                    <label class="label_home">Country:</label>     
+                    <input type="text" name="country" id="country_id" class="input_home" placeholder="Country"><br>
                          <div style="clear: both;"></div>
+
                     <div><p id=signup_fail></p> <!-- Something went wrong -->
-                    <button type="submit" id="submit_id2">SignUp</button></div>
+                    <button class="button_home" type="submit" id="submit_id2">SignUp</button></div>
                </form>
           </div>
      </div>
      </script>
-    
+     
      <script type="text/view" id="profileview">
-		<ul id="tabbitab">
-          <li>
-               <a href="javascript:void(0)" id="a-tab1" class="selected" 
-               onClick="show_Content_tab1(); return false;">Home</a>
-          </li>
-		<li>
-			<a href="javascript:void(0)"  onclick="show_Content_tab2(); return false;" id="a-tab2" class="tabs">Browse</a>
-               <!--<a href="#tab-content2" id="a-tab2" class="tabs" onClick="showContent_tab2()">Browse</a>!-->
-          </li>
-          <li>                
-               <a href="javascript:void(0)" id="a-tab3" class="tabs" 
-               onClick="show_Content_tab3(); return false;">Account</a>
-          </li>
-     </ul>
-     <br>
-     <div><p></p></div> 
+          <div id="profile">
+               <ul id="tabbitab">
+                    <li>
+                         <a href="javascript:void(0)" id="a-tab1" class="selected" 
+                         onClick="show_Content_tab1(); return false;">Home</a>
+                    </li>
+          		<li>
+          			<a href="javascript:void(0)"  onclick="show_Content_tab2(); return false;" id="a-tab2" class="tabs">Browse</a>
+                         <!--<a href="#tab-content2" id="a-tab2" class="tabs" onClick="showContent_tab2()">Browse</a>!-->
+                    </li>
+                    <li>                
+                         <a href="javascript:void(0)" id="a-tab3" class="tabs" 
+                         onClick="show_Content_tab3(); return false;">Account</a>
+                    </li>
+               </ul>
+           <br>
+               <div class="tab-content" id="tab-content-home">  
+			   <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
+					<h1>Home Tab</h1>
+                    <p class="p_logout" id="p_logout-home"></p></div>
+                    
+					<label class="user_info">E-mail: </label> <label id ="home_email"> </label><br>
+					<label class="user_info">Firstname:</label> <label id ="home_finame"> </label><br>
+					<label class="user_info">Familyname:</label> <label id ="home_faname"> </label><br>
+					<label class="user_info">Gender:</label> <label id ="home_gender"> </label><br>
+					<label class="user_info">City:</label> <label id ="home_city"> </label><br>
+					<label class="user_info">Country:</label> <label id ="home_country"> </label><br> </p>
+					
+					<form name= "form_wall_m" onsubmit="return post_own_message(); ">
+					<label> Write your message</label> <br> 
+					<textarea rows="4" cols="60" id="wall_message"></textarea> <br>
+					<input type="submit" id="submit_message"> <br>
+					<div style="clear: both;"></div>   
+					</form>
+					<div> Wall
+					</div>
 
-     <div class="tab-content" id="tab-content-home">  
-          <p>You live here</p>
-			
-     </div>
-     <div class="tab-content" id="tab-content-browse">
-          <p>Bowser lives here</p>
-     </div>
-     <div class="tab-content" id="tab-content-account">
-          <p>Call your accountant</p>
-     </div> 
+               </div>
+
+               <div class="tab-content" id="tab-content-browse">
+                   <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
+                    <h1>Browsing Tab</h1>
+                    <p class="p_logout" id="p_logout-browse"></p></div>
+
+                    <form class="form_profile" name="browse_form" action="#" onsubmit="return browse_validateForm();">
+                         <p id="browse_user">Search for user via email </p><br>
+                         <label class="label_profile">Search for:</label>
+                              <input class="input_profile" type="email" id="browse_email_id" name="browse_email" placeholder="email@domain.com" </input><br>
+                         <div style="clear: both"></div>
+                         <div><p id="browse_fail"></p>
+                         <button class="button_profile" id="button_browse" type="submit">Search</button></div>
+                    </form>
+               </div>
+               
+               <div class="tab-content" id="tab-content-account">
+					 <div><button class="button_logout" type="submit" onClick="logOut(); return false;">LogOut</button>
+                    <h1>Account Tab</h1>
+                    <p class="p_logout" id="p_logout-account"></p></div>
+
+                    <form class="form_profile" name="account_form" action="#" onsubmit="return psw_changeValidateForm(); ">
+                         <p id="change_pw">Do you want to change your password? </p><br>
+                         <label class="label_profile">Old password: </label>
+                              <input class="input_profile" type="password" name="psw_old" id="psw_old" placeholder="Old password"> </input><br>
+                         <div style="clear: both;"></div> 
+
+						 <label class="label_profile">New password: </label>
+                         <input class="input_profile" type="password" id="psw_new" placeholder="New password"> </input><br>
+                         <div style="clear: both;"></div>
+
+                         <label class="label_profile">Repeat psw: </label>
+                         <input class="input_profile" type="password" id="psw_new2" placeholder="Repeat psw"> </input><br> 
+                         <div style="clear: both;"></div> 
+                         
+                         <div><p id="psw_fail"></p>
+                         <button class="button_profile" id="button_psw" type="submit">Change</button></div>
+                    </form>             
+				</div> 
+          </div>
      </script>
+
 <title>Twidder A2</title>
 </head>
 <!--

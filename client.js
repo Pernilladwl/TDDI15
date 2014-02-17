@@ -1,6 +1,18 @@
 window.onload = function(){
     
     displayView();
+    if(sessionStorage.token != undefined) {	
+    	var tab = sessionStorage.getItem("activeTab");
+    	if(tab == "tab1") {
+    		show_Content_tab1();
+    	}
+    	if(tab == "tab2") {
+    		show_Content_tab2();
+    	}
+    	if(tab == "tab3") {
+    		show_Content_tab3();
+    	}
+    }
 //code that is executed as the page is loaded. 
 };
 
@@ -37,6 +49,13 @@ clearAllForms = function() {
     document.getElementById("gender_id").value="male";
     document.getElementById("city_id").value="";
     document.getElementById("country_id").value=""; 
+}
+
+clear_AccountForms = function() {
+	if(document.getElementById("psw_fail").innerHTML =="Password changed.") {
+		document.getElementById("psw_old").value="";
+		document.getElementById("psw_new").value="";
+	}
 }
 
 ClearSignUpText = function() {
@@ -101,6 +120,7 @@ loginValidateForm = function(){
 	    if (results.message == "Successfully signed in.") {
 	        sessionStorage.token = results.data;
 	        document.getElementById("welcomeview_body").innerHTML = document.getElementById("profileview").innerHTML;
+			get_own_info();
 	    }
 	    if (results.message == "Wrong username or password.") {
 	        document.getElementById("username_id").style.borderColor="#FF0000";
@@ -184,22 +204,82 @@ signupValidateForm = function(){
 	}
 
 	if (error_flag == 0) {
-	var formData = {'email': username_signup, 'password': password_signup, 'firstname': firstname,
-	    'familyname': lastname, 'gender': gender, 'city': city, 'country': country};
-	var result = serverstub.signUp(formData);
-	document.getElementById("signup_fail").innerHTML = result.message;
-	if (result.message == "User already exists.") {
-	    document.getElementById("username_signup_id").style.borderColor="#FF0000";
-	}
-	else if (result.message == "Successfully created a new user.") {
-	    clearAllForms();
-	}
+		var formData = {'email': username_signup, 'password': password_signup, 'firstname': firstname,
+		    'familyname': lastname, 'gender': gender, 'city': city, 'country': country};
+		var result = serverstub.signUp(formData);
+		if (result.message == "User already exists.") {
+			document.getElementById("signup_fail").style.color="#FF0000";
+		    document.getElementById("username_signup_id").style.borderColor="#FF0000";
+		}
+		else if (result.message == "Successfully created a new user.") {
+		    clearAllForms();
+		}
+		document.getElementById("signup_fail").innerHTML = result.message;
 	}
 	if (error_flag == 1) {
 	    signup_error();
 	}
 	return false;
 };
+
+psw_changeValidateForm = function() {
+	var error_flag = 0;
+	
+	var old_password=document.forms["account_form"]["psw_old"].value;
+	if (old_password==null || old_password=="") {
+	  document.getElementById("psw_old").style.borderColor="#FF0000";
+	  error_flag = 1;
+	}
+
+	var new_password=document.forms["account_form"]["psw_new"].value;
+	if (new_password==null || new_password=="") {
+	  document.getElementById("psw_new").style.borderColor="#FF0000";
+	  error_flag = 1;
+	}
+
+	var new_password2=document.forms["account_form"]["psw_new2"].value;
+	if (new_password2==null || new_password2=="") {
+	  document.getElementById("psw_new2").style.borderColor="#FF0000";
+	  error_flag = 1;
+	}
+
+	if (new_password != new_password2) {
+	    document.getElementById("psw_new").style.borderColor="#FF0000";
+	    document.getElementById("psw_new2").style.borderColor="#FF0000";
+	    document.getElementById("psw_new").value="";
+	    document.getElementById("psw_new2").value="";
+	    document.getElementById("psw_fail").innerHTML = "Passwords dont match";
+	    error_flag = 2;
+	}
+
+	if(error_flag == 0) {
+		var result = serverstub.changePassword(sessionStorage.token, old_password, new_password);
+		document.getElementById("psw_fail").innerHTML = result.message;
+		clear_AccountForms();
+		if(!result.success) {
+			document.getElementById("psw_old").value="";
+		}
+	}
+
+	if(error_flag == 1) {
+		document.getElementById("psw_fail").innerHTML = "Fill in all forms";
+	}
+	return false;
+};
+
+browse_validateForm = function() {
+	var search_email = document.forms["browse_form"]["browse_email"].value;
+	var atpos=search_email.indexOf("@");
+	var dotpos=search_email.lastIndexOf(".");
+	if (search_email==null || search_email=="" || atpos<1 || dotpos<atpos+2 || dotpos+2>=search_email.length) {
+	  document.getElementById("browse_email_id").style.borderColor="#FF0000"; 
+	  document.getElementById("browse_fail").innerHTML = "Not a valid email";
+	}
+	else {
+		serverstub.getUserDataByEmail(sessionStorage.token, search_email);
+	}
+	return false;
+}
 
 
 // SIGNED IN JS.s 
@@ -210,20 +290,22 @@ var selected_content = "tab-content-home";
 
 function show_Content_tab1() {
 	showContent("a-tab1", "tab-content-home");
+	sessionStorage.setItem("activeTab", "tab1");
+	get_own_info();
 	return false; 
 }
 
 function show_Content_tab2() {
 	showContent("a-tab2", "tab-content-browse");
+	sessionStorage.setItem("activeTab", "tab2");
 	return false;
 }
 
 function show_Content_tab3() {
 	showContent("a-tab3", "tab-content-account");
+	sessionStorage.setItem("activeTab", "tab3");
+	return false;
 }
-
-
-
 
 function showContent(tab_number, content){
 /*   document.getElementById(selected_content).style.background-color="#FFFCC"; */
@@ -242,7 +324,56 @@ function showContent(tab_number, content){
 
 function get_own_info(){
 	var user_info = serverstub.getUserDataByToken(sessionStorage.token).data;
-	var user_data = {'email': user_info.email, 'firstname': user_info.firstname,
-	    'familyname': user_info.familyname, 'gender': user_info.gender, 'city': user_info.city, 'country': user_info.country};
-		  return user_data;
-		  }
+/*	var user_data = {'email': user_info.email, 'firstname': user_info.firstname,'familyname': user_info.familyname,
+					'gender': user_info.gender, 'city': user_info.city, 'country': user_info.country};*/
+	document.getElementById("home_email").innerHTML = user_info.email;				
+	document.getElementById("home_finame").innerHTML = user_info.firstname;				
+	document.getElementById("home_faname").innerHTML = user_info.familyname;				
+	document.getElementById("home_gender").innerHTML = user_info.gender;				
+	document.getElementById("home_city").innerHTML = user_info.city;				
+	document.getElementById("home_country").innerHTML = user_info.country;				
+	return; //user_data;
+}
+
+function post_own_message(){
+var mail = serverstub.tokenToEmail(sessionStoreage.token);
+document.getElementById("myTextarea").select();
+serverstub.postMessage(sessionStorage.token, document.getElementById("wall_message").select(), mail);
+return false;
+}
+
+logOut = function() {
+	var result = serverstub.signOut(sessionStorage.token);
+   	var tab = sessionStorage.getItem("activeTab");
+	if(tab == "tab1") {
+		document.getElementById("p_logout-home").innerHTML = result.message;
+		if(result.success) {
+			document.getElementById("p_logout-home").style.color = "#33FF33";
+		}
+		else {
+			document.getElementById("p_logout-home").style.color = "#FF0000";
+		}
+	}
+	if(tab == "tab2") {
+		document.getElementById("p_logout-browse").innerHTML = result.message;
+		if(result.success) {
+			document.getElementById("p_logout-browse").style.color = "#33FF33";
+		}
+		else {
+			document.getElementById("p_logout-browse").style.color = "#FF0000";
+		}
+	}
+	if(tab == "tab3") {
+		document.getElementById("p_logout-account").innerHTML = result.message;
+		if(result.success) {
+			document.getElementById("p_logout-account").style.color = "#33FF33";
+		}
+		else {
+			document.getElementById("p_logout-account").style.color = "#FF0000";
+		}
+	}
+}
+/*function load_messeges(){
+
+var serverstub.getUserMessagesByToken;
+}*/
